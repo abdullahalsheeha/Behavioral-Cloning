@@ -39,7 +39,10 @@ A 2 dimensional particle filter in C++. The particle filter is given a map and s
 ![github](https://user-images.githubusercontent.com/61292363/106394455-c22ccb00-640d-11eb-9287-4ca3cb13a7ed.mov)
 
 ### Path Planning: Vehicle Trajectories
-Safely navigate a self-driving car around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+Safely navigate a self-driving car around a virtual the highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit.
+The car transmits its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road.
+The path planner outputs a list of (x,y) global map coordinates that form a trajectory. Every 0.02 s the car moves to the next point on the list. The car's new rotation becomes the line between the previous waypoint and the car's new location.
+The planner implemented is able to drive safely at a speed slightly below the 50MPH limit for 4.32 miles without incident.
 
 ![github](https://user-images.githubusercontent.com/61292363/106394842-cce85f80-640f-11eb-9d1f-252d8bbbb057.mov)
 
