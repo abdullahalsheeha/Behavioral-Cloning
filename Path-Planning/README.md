@@ -1,7 +1,7 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
    
-Intoduction
+### Intoduction
 The goal of this project is to build a path planner to safely navigate around a virtual highway with other cars.
 
 The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit.
@@ -12,7 +12,7 @@ The path planner outputs a list of (x,y) global map coordinates that form a traj
 
 The planner implemented is able to drive safely at a speed slightly below the 50MPH limit for 4.32 miles without incident.
 
-Simulator.
+### Simulator.
 The simulator sends car telemetry information (car's position and velocity) and sensor fusion information about the rest of the cars in the highway (Ex. car id, velocity, position). The communication between the simulator and the path planner is done using WebSocket
 
 The simulator can be downloaded here
@@ -44,7 +44,7 @@ The car is able to change lanes
 
 The car changes lanes when the there is a slow car in front of it and it's safe to change lanes (no other cars within a determined distance range).
 
-Reflection
+### Reflection
 The code is divided in 2 main files:
 
 main.cpp which contains all the code.
@@ -56,15 +56,13 @@ I take the coordinates of the last two points of the previous path and save them
 
 The path planner is divided in 3 steps:
 
-Prediction: Analyze other cars positions and estimate their future trajectory.
-Behavior Planning: Determine what behavior my car should exhibit based on my predictions of the environment. Should I change lanes? Should I increase speed? Should I decrease speed?
-Trajectory Generation: Determine which trajectory is best for executing the chosen immediate behavior
 
-Prediction & Behavior Planning:
+
+### Prediction & Behavior Planning:
 In this step, I updated all the three lane's state. The simulation sent the sensor fusion data, which contained, every necessarily information. I selected the current lane based on frenet d value. After update, I had the car's relative distance, velocity in each lane, which is ahead of my car, or behind me 20 m. This 20 meter tolerance was given to increase the maneuver safety. if its not safe to change lane and the car in front me in range 30 m, my car have to slow down. (109-185)
 
 
-Trajectory Generation
+### Trajectory Generation
 I take the frenet d value and use it to generate the cartesian (x, y) coordinates for 3 target points in the future, that are added to the ptsx and ptsy vectors together with the last 2 points from the previous path that were added before.(219-229)
 
 I take the ptsx and ptsy vectors and shift and rotate the points to local car coordinates. Then I fit a spline (232-242).
