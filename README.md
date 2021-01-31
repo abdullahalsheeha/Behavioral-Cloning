@@ -11,28 +11,20 @@ Employ region of interest selection, grayscaling, Gaussian smoothing, Canny Edge
 Advanced Lane Line Detection
 Find lane markings in images and video using color transformations, gradients, and perspective transformation. Determine the curvature of the lane and the vehicle position with respect to center.
 
-example
-Lane detections with curvature and offset
-
-Rendered notebook
-Project writeup
-Source
+![github](https://user-images.githubusercontent.com/61292363/106393862-657be100-640a-11eb-9598-badfdbb450fd.mp4)
 
 Traffic sign classifier
 Train and validate a deep learning model using TensorFlow to classify traffic sign images using the German Traffic Sign Dataset.
 
-Rendered notebook
-Project writeup
-Source
+![download](https://user-images.githubusercontent.com/61292363/106393930-e1762900-640a-11eb-827a-cbfaba28a73d.png)
 
 Behavioral Cloning
 Use Udacity's driving simulator to create a dataset to clone driving behavior by training and validating a model using Keras. The model outputs a steering angle to an autonomous vehicle.
 
-example
+![github](https://user-images.githubusercontent.com/61292363/106394095-dcfe4000-640b-11eb-81f5-09d884388501.mp4)
 Autonomus driving in the simulator
 
-Project writeup
-Source
+
 
 Extended Kalman Filter
 Utilize a Kalman filter, and simulated lidar and radar measurements to track the a bicycle's position and velocity.
