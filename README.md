@@ -31,16 +31,12 @@ Utilize a Kalman filter, and simulated lidar and radar measurements to track the
 
 Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles.
 
-dataset_1
-
-Source
+<img width="964" alt="Screen Shot 2021-01-31 at 9 38 29 PM" src="https://user-images.githubusercontent.com/61292363/106394284-e340ec00-640c-11eb-961c-e6d85bf284cf.png">
 
 Localization: Particle Filter
 A 2 dimensional particle filter in C++. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter is also given observation and control data.
 
-particle_filter
-
-Source
+![github](https://user-images.githubusercontent.com/61292363/106394455-c22ccb00-640d-11eb-9287-4ca3cb13a7ed.mov)
 
 Path Planning: Vehicle Trajectories
 Safely navigate a self-driving car around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
