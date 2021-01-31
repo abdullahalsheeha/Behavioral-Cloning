@@ -41,10 +41,7 @@ A 2 dimensional particle filter in C++. The particle filter is given a map and s
 ### Path Planning: Vehicle Trajectories
 Safely navigate a self-driving car around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
 
-path_planning
-
-Video
-Source
+![github](https://user-images.githubusercontent.com/61292363/106394842-cce85f80-640f-11eb-9d1f-252d8bbbb057.mov)
 
 ### PID controller
 Use a Proportional-Integral-Derivative Controller (PID), to control the steering angle of a simuluated self-driving car maneuvering around a circular track.
