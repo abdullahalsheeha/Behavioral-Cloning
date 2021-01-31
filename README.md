@@ -6,7 +6,7 @@ Projects
 Basic Lane Line Detection
 Employ region of interest selection, grayscaling, Gaussian smoothing, Canny Edge Detection and Hough Transform line detection to identify lane lines on the road in an image.
 
-Finding_lane_lines/test_videos_output/solidWhiteRight.mp4
+https://user-images.githubusercontent.com/61292363/106393687-aa534800-6409-11eb-9518-b3a8ce1ba5df.mp4
 
 Advanced Lane Line Detection
 Find lane markings in images and video using color transformations, gradients, and perspective transformation. Determine the curvature of the lane and the vehicle position with respect to center.
