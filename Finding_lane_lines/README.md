@@ -10,14 +10,13 @@ When we drive, we use our eyes to decide where to go.  The lines on the road tha
 ## 1. Pipeline description
 My pipeline consisted of 8 steps.
 
-* Step 1: Resize image into 960 x 540.
-* Step 2: Convert the colored image to grayscale.
-* Step 3: Smooth with Gaussian Blur
-* Step 4: Detect edges with Canny edge detection operator
-* Step 5: Select Region Of Interest (ROI)
-* Step 6: Find lines with Hough transform
-* Step 7: Determine the left and right lane from detected the lines
-* Step 8: Draw lines
+* Step 1: Convert the colored image to grayscale.
+* Step 2: Smooth with Gaussian Blur
+* Step 3: Detect edges with Canny edge detection operator
+* Step 4: Select Region Of Interest (ROI)
+* Step 5: Find lines with Hough transform
+* Step 6: Determine the left and right lane from detected the lines
+* Step 7: Draw lines
 
 ## 2. Potential shortcomings with this pipeline
 Shortcomings are:
