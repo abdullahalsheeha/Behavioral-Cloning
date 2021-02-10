@@ -12,10 +12,6 @@ The path planner outputs a list of (x,y) global map coordinates that form a traj
 
 The planner implemented is able to drive safely at a speed slightly below the 50MPH limit for 4.32 miles without incident.
 
-### Simulator.
-The simulator sends car telemetry information (car's position and velocity) and sensor fusion information about the rest of the cars in the highway (Ex. car id, velocity, position). The communication between the simulator and the path planner is done using WebSocket
-
-The simulator can be downloaded here
 
 ### Basic Build Instructions
 * Clone this repo.
