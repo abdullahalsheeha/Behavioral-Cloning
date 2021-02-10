@@ -17,32 +17,13 @@ The simulator sends car telemetry information (car's position and velocity) and 
 
 The simulator can be downloaded here
 
-Basic Build Instructions
-Clone this repo.
-Make a build directory: mkdir build && cd build
-Compile: cmake .. && make
-Run it: ./path_planning.
-Rubic Points
-Compilation
-The code compiles correctly.
-
-Valid Trajectories
-The car is able to drive at least 4.32 miles without incident.
+### Basic Build Instructions
+* Clone this repo.
+* Make a build directory: mkdir build && cd build
+* Compile: cmake .. && make
+* Run it: ./path_planning.
 
 
-The car drives according to the speed limit.
-
-Max Acceleration and Jerk are not Exceeded.
-
-Car does not have collisions.
-
-The car stays in its lane, except for the time between changing lanes.
-
-The car remains in its lane except when it sees an opportunity to change lanes. It doesn't spend more than a 3 second when it has to move from one lane to another.
-
-The car is able to change lanes
-
-The car changes lanes when the there is a slow car in front of it and it's safe to change lanes (no other cars within a determined distance range).
 
 ### Reflection
 The code is divided in 2 main files:
@@ -68,3 +49,8 @@ I take the frenet d value and use it to generate the cartesian (x, y) coordinate
 I take the ptsx and ptsy vectors and shift and rotate the points to local car coordinates. Then I fit a spline (232-242).
 
 Using the spline curve calculated, I take the first 30m chunk (my target_x distance) and split it to generate the waypoints of my new trajectory. Each point represents the position of my car every 0.02s. I use each point velocity to calculate the x position of my car at the end of the 0.02s interval, and use the spline to calculate my y coordinate. Finally, I shift and rotate these points back to global coordinates and save them in a next_x_vals and next_y_vals vectors. This new trajectory generate is fed to the simulator. (249-275)
+
+
+## Results 
+
+![github](https://user-images.githubusercontent.com/61292363/106394842-cce85f80-640f-11eb-9d1f-252d8bbbb057.mov)
