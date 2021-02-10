@@ -13,12 +13,12 @@ The path planner outputs a list of (x,y) global map coordinates that form a traj
 The planner implemented is able to drive safely at a speed slightly below the 50MPH limit for 4.32 miles without incident.
 
 
-### Basic Build Instructions
-* Clone this repo.
-* Make a build directory: mkdir build && cd build
-* Compile: cmake .. && make
-* Run it: ./path_planning.
+## Basic Build Instructions
 
+1. Clone this repo.
+2. Make a build directory: `mkdir build && cd build`
+3. Compile: `cmake .. && make`
+4. Run it: `./path_planning`. 
 
 
 ### Reflection
