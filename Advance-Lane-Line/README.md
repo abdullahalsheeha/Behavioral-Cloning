@@ -75,6 +75,6 @@ The final code used in the image and video pipelines can be seen in theÊget_rad
 ![Unknown-5](https://user-images.githubusercontent.com/61292363/107554052-74227f00-6be6-11eb-9459-e5cc58b7aaa5.png)
 
 
-### Final result
+## Results
 
 ![github](https://user-images.githubusercontent.com/61292363/106393862-657be100-640a-11eb-9598-badfdbb450fd.mp4)
