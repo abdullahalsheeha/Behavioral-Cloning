@@ -1,58 +1,91 @@
-## Project: Build a Traffic Sign Recognition Program
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+# **Traffic Sign Recognition** 
 
-Overview
----
-In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
-We have included an Ipython notebook that contains further instructions 
-and starter code. Be sure to download the [Ipython notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb). 
-
-We also want you to create a detailed writeup of the project. Check out the [writeup template](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup. The writeup can be either a markdown file or a pdf document.
-
-To meet specifications, the project will require submitting three files: 
-* the Ipython notebook with the code
-* the code exported as an html file
-* a writeup report either as a markdown or pdf file 
-
-Creating a Great Writeup
----
-A great writeup should include the [rubric points](https://review.udacity.com/#!/rubrics/481/view) as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
-
-The Project
----
 The goals / steps of this project are the following:
-* Load the data set
+* Load the data set 
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
 
-### Dependencies
-This lab requires:
 
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
+### Data Set Summary & Exploration
 
-The lab environment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
+#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-### Dataset and Repository
+I used the pandas library to calculate summary statistics of the traffic
+signs data set:
 
-1. Download the data set. The classroom has a link to the data set in the "Project Instructions" content. This is a pickled dataset in which we've already resized the images to 32x32. It contains a training, validation and test set.
-2. Clone the project, which contains the Ipython notebook and the writeup template.
-```sh
-git clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project
-cd CarND-Traffic-Sign-Classifier-Project
-jupyter notebook Traffic_Sign_Classifier.ipynb
+* The size of training set is 34799 images
+* The size of the validation set is 4410 images
+* The size of test set is 12630 images
+* The shape of a traffic sign image is (32, 32, 3)
+* The number of unique classes/labels in the data set is 43
+
+#### 2. Include an exploratory visualization of the dataset.
+
+10 random image from each classes:
+
+![Unknown](https://user-images.githubusercontent.com/61292363/107635881-f067a180-6c7c-11eb-9441-62e441fbbd27.png)
+
+### Design and Test a Model Architecture
+
+#### 1. Preprocessing the data
+
+As a first step, I decided to normalized the image data because i want the pixles to be in range between 0 and 1, because the scale of the data has an effect on the magnitude of the gradient for the weights.
+
+#### 2. Final model architecture
+
+My final model consisted of the following layers:
+```python
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d (Conv2D)              (None, 30, 30, 20)        560       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 15, 15, 20)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 13, 13, 50)        9050      
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 6, 6, 50)          0         
+_________________________________________________________________
+dropout (Dropout)            (None, 6, 6, 50)          0         
+_________________________________________________________________
+flatten (Flatten)            (None, 1800)              0         
+_________________________________________________________________
+dense (Dense)                (None, 500)               900500    
+_________________________________________________________________
+dense_1 (Dense)              (None, 256)               128256    
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 256)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 43)                11051     
+=================================================================
+Total params: 1,049,417
+Trainable params: 1,049,417
+Non-trainable params: 0
 ```
 
-### Requirements for Submission
-Follow the instructions in the `Traffic_Sign_Classifier.ipynb` notebook and write the project report using the writeup template as a guide, `writeup_template.md`. Submit the project code and writeup document.
+#### 3. Trained model description.
+Hyperparameters for training:
+```python 
+rate = 0.001
+EPOCHS = 30
+BATCH_SIZE = 128
+```
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+To train the model, I used Adam Optimizer.
 
+#### 4. Model Accuracy
+
+| Set name         		|     Accuracy	        					|
+|:---------------------:|:---------------------------------------------:| 
+| Training         		|     0.988	        					| 
+| Validation         		|     0.958	        					| 
+| Test         		|     0.943	        					| 
+
+
+## Results
+Predict new images
+![download](https://user-images.githubusercontent.com/61292363/106393930-e1762900-640a-11eb-827a-cbfaba28a73d.png)
