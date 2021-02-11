@@ -87,5 +87,7 @@ To train the model, I used Adam Optimizer.
 
 
 ## Results
+
 Predict new images
+
 ![download](https://user-images.githubusercontent.com/61292363/106393930-e1762900-640a-11eb-827a-cbfaba28a73d.png)
